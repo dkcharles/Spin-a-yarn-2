@@ -1,0 +1,5 @@
+title: CountStuff
+---
+Counting is fun! Let's count together. Press space to continue.
+<<IncrementCount TriggerArea>>
+===

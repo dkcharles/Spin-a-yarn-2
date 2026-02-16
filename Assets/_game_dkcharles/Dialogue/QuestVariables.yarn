@@ -5,6 +5,7 @@
 
 <<declare $quest_active = false as bool>>
 <<declare $quest_completed = false as bool>>
+<<declare $yarn_count = 0 as number>>
 
 // You can add more quest variables here as your game grows
 // <<declare $quest_2_active = false as bool>>
