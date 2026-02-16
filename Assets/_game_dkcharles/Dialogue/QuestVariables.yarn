@@ -1,0 +1,13 @@
+﻿title: QuestVariables
+---
+// This node declares all quest-related variables
+// It should never be run directly - it's just for declarations
+
+<<declare $quest_active = false as bool>>
+<<declare $quest_completed = false as bool>>
+
+// You can add more quest variables here as your game grows
+// <<declare $quest_2_active = false as bool>>
+// <<declare $gold_collected = 0 as number>>
+// <<declare $player_name = "" as string>>
+===

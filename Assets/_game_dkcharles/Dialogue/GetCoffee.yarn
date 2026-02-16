@@ -1,0 +1,31 @@
+﻿title: Barista_Greeting
+---
+<<declare $drink_ordered = "" as string>>
+
+Narrator: The coffee shop is quiet this morning.
+Barista: Morning! What can I get you?
+
+-> Order a latte
+    Player: A latte, please.
+    <<set $drink_ordered to "latte">>
+    Barista: Coming right up!
+    <<jump Barista_ServeDrink>>
+    
+-> Order tea
+    Player: Just tea, thanks.
+    <<set $drink_ordered to "tea">>
+    Barista: A classic choice.
+    <<jump Barista_ServeDrink>>
+    
+-> Ask about specials
+    Player: What's the special today?
+    Barista: We have a lovely caramel macchiato. I will make you one!
+    <<set $drink_ordered to "special caramel macchiato">>
+    <<jump Barista_ServeDrink>>
+===
+
+title: Barista_ServeDrink
+---
+Narrator: The barista prepares your {$drink_ordered} with practiced efficiency.
+Barista: Here you go. Enjoy!
+===

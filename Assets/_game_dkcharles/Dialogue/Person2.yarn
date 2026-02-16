@@ -1,0 +1,40 @@
+﻿title: Person2_Talk
+---
+// Check quest state and branch accordingly
+<<if $quest_completed>>
+    Person_2: Thursday it is then. Thanks for letting me know!
+<<elseif $quest_active>>
+    // Player has the message to deliver
+    Person_2: Hello! Can I help you?
+    
+    -> I have a message from Person 1.
+        Person_2: Oh? What is it?
+        -> The meeting has been moved to Thursday.
+            Person_2: Ah, Thursday! That works much better for me.
+            Person_2: Thank you for passing that along.
+            <<set $quest_active to false>>
+            <<set $quest_completed to true>>
+            Person_2: I appreciate you taking the time to find me.
+        
+    -> Just saying hello.
+        Person_2: Well, hello to you too!
+        Person_2: Is there anything else?
+        -> Actually, I have a message from Person 1.
+            Person_2: Oh? What did they say?
+            -> The meeting has been moved to Thursday.
+                Person_2: Thursday, got it. Thanks for letting me know!
+                <<set $quest_active to false>>
+                <<set $quest_completed to true>>
+        -> No, that's all. Goodbye.
+            Person_2: Take care!
+<<else>>
+    // Quest not started yet
+    Person_2: Hello there!
+    Person_2: Lovely day, isn't it?
+    
+    -> Yes, it is!
+        Person_2: Makes you glad to be outside.
+    -> I suppose so.
+        Person_2: Well, I think so anyway!
+<<endif>>
+===

@@ -1,0 +1,39 @@
+﻿title: Person1_Talk
+---
+<<if $quest_completed>>
+    Person_1: Thanks again for helping me out earlier.
+<<elseif $quest_active>>
+    Person_1: Have you delivered my message to Person 2 yet?
+    Person_1: They should be nearby.
+<<else>>
+    <<jump Person1_FirstMeeting>>
+<<endif>>
+===
+
+title: Person1_FirstMeeting
+---
+Person_1: Oh, hello there!
+Person_1: I wonder if you could help me with something?
+
+-> Sure, what do you need?
+    <<jump Person1_GiveQuest>>
+
+-> Sorry, I'm in a hurry.
+    Person_1: No worries, perhaps another time.
+===
+
+title: Person1_GiveQuest
+---
+Person_1: Excellent! I need you to deliver a message to Person 2.
+Person_1: Tell them that the meeting has been moved to Thursday.
+Person_1: Can you do that for me?
+
+-> Consider it done.
+    <<set $quest_active to true>>
+    Person_1: Thank you so much! They should be somewhere nearby.
+    <<stop>>
+
+-> Actually, I'm busy right now.
+    Person_1: Oh, that's a shame. Come back if you change your mind.
+    <<stop>>
+===
