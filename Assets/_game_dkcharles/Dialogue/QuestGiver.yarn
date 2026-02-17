@@ -1,0 +1,23 @@
+// this script checks if yarn_count is equal to 5 or greater and if so jumps to a node called "QuestCompleted" outputs a message then calls a Unity function called "CompleteQuest" in QuestGiver.cs. If yarn_count is less than 5 it outputs a message telling the player how many yarns they have collected so far. 
+title: QuestGiver
+---
+<<once>>
+Welcome, adventurer! I have a quest for you. Collect 5 yarns scattered around the world and return to me. 
+-> Yes, I would love to help.
+<<endonce>>
+
+
+<<if $yarn_count >= 5>>
+    <<jump QuestCompleted>>
+<<else>>
+You have collected {$yarn_count} yarns so far. Keep going!
+<<endif>>
+===
+
+title: QuestCompleted
+---
+Congratulations! You have collected all the yarns!
+<<QuestComplete TriggerArea>>
+===
+
+
